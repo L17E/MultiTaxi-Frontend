@@ -1,0 +1,43 @@
+.dark_theme {
+  --white-color: #FFFFFF;
+  --background-color: #111111;
+  --contrasting-color: #FFFFFF;
+
+  --sub-color: #787878;
+  --button-color: #222222;
+  --extra-button-color: #171717;
+
+  --navigator-color: #65B1EF;
+
+  --primary-color: #32536A;
+  --secondary-color: #A4BACC;
+
+  --navbar-inactive-color: #A0A0A0;
+  --navbar-active-color: #FFFFFF;
+  --navbar-active-background-color: #1E1E1E;
+
+  --map-filter: grayscale(100%);
+  --title-weight: normal;
+}
+
+.light_theme {
+  --white-color: #FFFFFF;
+  --background-color: #FFFFFF;
+  --contrasting-color: #787878;
+
+  --sub-color: #787878;
+  --button-color: #D9D9D9;
+  --extra-button-color: #bebebe;
+
+  --navigator-color: #65B1EF; /* На время */
+
+  --primary-color: #72A9D0;
+  --secondary-color: #FFFFFF;
+
+  --navbar-inactive-color: #A0A0A0;
+  --navbar-active-color: #FFFFFF;
+  --navbar-active-background-color: #A0A0A0;
+
+  --map-filter: hue-rotate(90deg);
+  --title-weight: bold;
+}

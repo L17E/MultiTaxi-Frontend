@@ -1,0 +1,30 @@
+[id$="map"] {
+  height: 100%;
+  border-radius: 30px;
+  background-color: var(--background-color);
+}
+
+.leaflet-tile-pane {
+  -webkit-filter: var(--map-filter);
+  filter: var(--map-filter);
+}
+
+.leaflet-control-attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.leaflet-control {
+  display: none;
+}
+
+/*
+.leaflet-control a svg path {
+  display: none;
+}
+
+.leaflet-control span {
+  display: none;
+}
+*/

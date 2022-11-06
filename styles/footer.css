@@ -1,0 +1,21 @@
+.navbar ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a[class*=navbar__button] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 30px;
+}
+.navbar__button_active {
+  background-color: var(--navbar-active-background-color);
+  color: var(--navbar-active-color);
+}
+
+.navbar__button_inactive {
+  color: var(--navbar-inactive-color)
+}

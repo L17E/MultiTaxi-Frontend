@@ -1,0 +1,60 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.weather__box {
+  gap: 5px;
+}
+
+.weather__box .text-box__title {
+  font-size: 1.5rem;
+}
+
+.weather__box .text-box__body {
+  font-size: 0.8rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme_toggle {
+  fill: var(--contrasting-color);
+}
+
+.avatar__image {
+  width: 60px;
+  height: 60px;
+}
+
+.selection-profile-menu {
+  transform: translateX(-100px);
+  top: 100px;
+  z-index: 999999;
+
+  background-color: var(--button-color);
+  padding: 15px;
+  border-radius: 15px;
+  color: var(--contrasting-color)
+}
+
+.selection-profile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

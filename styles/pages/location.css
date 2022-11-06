@@ -1,0 +1,100 @@
+.main__set-location {
+  background-color: var(--button-color);
+  color: var(--contrasting-color);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.selection-address-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--background-color);
+}
+
+.input-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: inherit;
+  padding: 15px 10px;
+  border-radius: 30px;
+  background-color: var(--extra-button-color);
+}
+
+.input-container {
+  width: inherit;
+  background-color: var(--button-color);
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+
+.input-container label {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-container label i {
+  color: var(--sub-color);
+}
+
+.input-to, .input-from {
+  width: inherit;
+  background: none;
+  color: var(--contrasting-color);
+}
+
+.addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: inherit;
+  height: 100%;
+
+  background-color: var(--extra-button-color);
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 30px;
+  overflow-y: scroll;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: inherit;
+  background-color: var(--button-color);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.address b {
+  font-size: 1.2rem;
+  color: var(--contrasting-color);
+}
+
+.address small {
+  color: var(--sub-color);
+}
+
+.address:hover {
+  background-color: var(--background-color);
+}
+
+.selection-address-menu__submit {
+  width: inherit;
+  background-color: var(--button-color);
+  color: var(--contrasting-color);
+  border-radius: 30px;
+  padding: 10px;
+}
