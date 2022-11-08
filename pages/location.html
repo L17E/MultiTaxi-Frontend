@@ -39,7 +39,7 @@
       <div class="user">
         <div class="user">
           <button class="theme_toggle" type="button">
-            <i class="fa-solid fa-circle-half-stroke fa-2xl"></i>
+            <i class="fa-solid fa-circle-half-stroke fa-2x"></i>
           </button>
           <button class="avatar" type="button">
             <img class="avatar__image" src="../content/temp/avatar.png" alt="Пользователь">
@@ -66,9 +66,7 @@
         </figure>
       </div>
 
-      <button type="button" class="main__set-location">
-        Укажите адрес
-      </button>
+      <button type="button" class="set-location">Укажите адрес</button>
 
       <div class="selection-address-menu overlay">
         <div class="input-forms">
@@ -88,9 +86,11 @@
 
         <div class="addresses">
           <!--
-          <article class="address text-box" data-latitude="40.4" data-longitude="40.4">
-            <b>Адрес</b>
-            <small>Адрес</small>
+          <article class="address" data-latitude="40.4" data-longitude="40.4" data-parent="from">
+            <button type="button" class="address__button text-box">
+              <b>Адрес</b>
+              <small>Адрес</small>
+            </button>
           </article>
           -->
         </div>
@@ -142,7 +142,7 @@
 <script src="../scripts/map_setup.js"></script>
 <script src="../scripts/theme_toggle.js"></script>
 <script src="../scripts/close_app.js"></script>
-<script src="../scripts/show_overlay.js"></script>
+<script src="../scripts/overlay.js"></script>
 <script src="../scripts/set_location.js"></script>
 </body>
 </html>

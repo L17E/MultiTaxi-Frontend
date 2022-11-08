@@ -1,4 +1,4 @@
-.main__set-location {
+.set-location {
   background-color: var(--button-color);
   color: var(--contrasting-color);
   padding: 10px;
@@ -68,6 +68,10 @@
 }
 
 .address {
+  width: inherit;
+}
+
+.address__button {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -78,16 +82,16 @@
   padding: 20px;
 }
 
-.address b {
+.address__button b {
   font-size: 1.2rem;
   color: var(--contrasting-color);
 }
 
-.address small {
+.address__button small {
   color: var(--sub-color);
 }
 
-.address:hover {
+.address__button:hover {
   background-color: var(--background-color);
 }
 
