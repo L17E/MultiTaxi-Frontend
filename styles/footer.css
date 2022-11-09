@@ -12,10 +12,10 @@ a[class*=navbar__button] {
   border-radius: 30px;
 }
 .navbar__button_active {
-  background-color: var(--navbar-active-background-color);
-  color: var(--navbar-active-color);
+  background-color: var(--active-background-color);
+  color: var(--active-color);
 }
 
 .navbar__button_inactive {
-  color: var(--navbar-inactive-color)
+  color: var(--inactive-color)
 }

@@ -12,9 +12,9 @@
   --primary-color: #32536A;
   --secondary-color: #A4BACC;
 
-  --navbar-inactive-color: #A0A0A0;
-  --navbar-active-color: #FFFFFF;
-  --navbar-active-background-color: #1E1E1E;
+  --inactive-color: #A0A0A0;
+  --active-color: #FFFFFF;
+  --active-background-color: #1E1E1E;
 
   --map-filter: grayscale(100%);
   --title-weight: normal;
@@ -34,9 +34,9 @@
   --primary-color: #72A9D0;
   --secondary-color: #FFFFFF;
 
-  --navbar-inactive-color: #A0A0A0;
-  --navbar-active-color: #FFFFFF;
-  --navbar-active-background-color: #A0A0A0;
+  --inactive-color: #A0A0A0;
+  --active-color: #FFFFFF;
+  --active-background-color: #A0A0A0;
 
   --map-filter: hue-rotate(90deg);
   --title-weight: bold;

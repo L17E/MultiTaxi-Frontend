@@ -8,8 +8,8 @@
   <meta name="description" content="Сервис для быстрого вызова такси.">
   <meta name="author" content="Lyte">
 
-  <link rel="shortcut icon" href="content/favicon.ico">
-  <title>MultiTaxi</title>
+  <!-- <link rel="shortcut icon" href="content/favicon.ico"> -->
+  <title>Местоположение</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
@@ -59,14 +59,44 @@
 
   <main>
     <div class="main__container">
-      <figure class="map-section">
-        <div id="main-map"></div>
-        <figcaption>Leaflet © OpenStreetMap</figcaption>
-      </figure>
-      <a href="location.html" class="main__start text-box">
-        <b class="text-box__title">Начните поездку</b>
-        <p class="text-box__body">Мы подберем Вам самое ближайшее и дешевое такси</p>
-      </a>
+      <div class="map-section">
+        <figure class="map-section">
+          <div id="location-map"></div>
+          <figcaption>Leaflet © OpenStreetMap</figcaption>
+        </figure>
+      </div>
+
+      <button type="button" class="set-location">Укажите адрес</button>
+
+      <form class="selection-address-menu overlay" name="LocationForm" action="" method="post">
+        <div class="input-forms">
+          <div class="input-container">
+            <label>
+              <i class="fa-solid fa-crosshairs"></i>
+              <input class="input-from" placeholder="Откуда едем?" type="search" name="from">
+            </label>
+          </div>
+          <div class="input-container">
+            <label>
+              <i class="fa-solid fa-flag"></i>
+              <input class="input-to" placeholder="Куда едем?" type="search" name="to">
+            </label>
+          </div>
+        </div>
+
+        <div class="addresses">
+          <!--
+          <article class="address" data-latitude="40.4" data-longitude="40.4" data-parent="from">
+            <button type="button" class="address__button text-box">
+              <b>Адрес</b>
+              <small>Адрес</small>
+            </button>
+          </article>
+          -->
+        </div>
+
+        <button type="submit" class="selection-address-menu__submit">Готово</button>
+      </form>
     </div>
   </main>
 
@@ -75,13 +105,13 @@
       <nav class="navbar">
         <ul>
           <li>
-            <a href="#" class="navbar__button_active">
+            <a href="index.html" class="navbar__button_inactive">
               <i class="fa-solid fa-house"></i>
             </a>
           </li>
 
           <li>
-            <a href="location.html" class="navbar__button_inactive">
+            <a href="#" class="navbar__button_active">
               <i class="fa-solid fa-location-dot"></i>
             </a>
           </li>
@@ -113,5 +143,6 @@
 <script src="scripts/theme_toggle.js"></script>
 <script src="scripts/close_app.js"></script>
 <script src="scripts/overlay.js"></script>
+<script src="scripts/set_location.js"></script>
 </body>
 </html>

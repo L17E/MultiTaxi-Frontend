@@ -13,10 +13,10 @@ function onAddressSelect(event) {
   input.value = "";
   input.placeholder = text_address;
 
-  localStorage.setItem(parent + "name", name);
-  localStorage.setItem(parent + "address", text_address);
-  localStorage.setItem(parent + "latitude", address.getAttribute("data-latitude"));
-  localStorage.setItem(parent + "longitude", address.getAttribute("data-longitude"));
+  localStorage.setItem(parent + "_name", name);
+  localStorage.setItem(parent + "_address", text_address);
+  localStorage.setItem(parent + "_latitude", address.getAttribute("data-latitude"));
+  localStorage.setItem(parent + "_longitude", address.getAttribute("data-longitude"));
 }
 
 function createAddress(name, address, latitude, longitude, parent) {
@@ -70,6 +70,21 @@ const to_input = document.querySelector(".input-to");
 
 from_input.addEventListener("input", searchAddresses);
 to_input.addEventListener("input", searchAddresses);
+
+function setDefaultAddresses() {
+  const from_address = localStorage.getItem("from_address");
+  if(from_address) {
+    from_input.placeholder = from_address;
+  }
+
+  const to_address = localStorage.getItem("to_address");
+  if(to_address) {
+    to_input.placeholder = to_address;
+  }
+}
+
+const set_location_button = document.querySelector(".set-location");
+set_location_button.addEventListener("click", setDefaultAddresses)
 
 function onReady() {
   const menu = document.querySelector(".selection-address-menu");

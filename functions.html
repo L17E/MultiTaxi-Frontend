@@ -8,8 +8,8 @@
   <meta name="description" content="Сервис для быстрого вызова такси.">
   <meta name="author" content="Lyte">
 
-  <!-- <link rel="shortcut icon" href="content/favicon.ico"> -->
-  <title>Местоположение</title>
+  <link rel="shortcut icon" href="content/favicon.ico">
+  <title>MultiTaxi</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
@@ -21,7 +21,7 @@
   </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="../styles/style.css" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
   <header>
     <div class="header__container">
       <div class="weather">
-        <img class="weather__icon" src="../content/temp/weather.png" alt="Погода">
+        <img class="weather__icon" src="content/temp/weather.png" alt="Погода">
         <div class="weather__box text-box">
           <b class="weather__temperature text-box__title">0° C</b>
           <small class="weather__type text-box__body">Туманно</small>
@@ -42,14 +42,14 @@
             <i class="fa-solid fa-circle-half-stroke fa-2x"></i>
           </button>
           <button class="avatar" type="button">
-            <img class="avatar__image" src="../content/temp/avatar.png" alt="Пользователь">
+            <img class="avatar__image" src="content/temp/avatar.png" alt="Пользователь">
           </button>
         </div>
         <div class="selection-profile-menu overlay">
           <ul>
-            <li><a href="../pages/settings.html">Настройки</a></li>
-            <li><a href="../pages/tos.html">Условия пользования</a></li>
-            <li><a href="../pages/privacy_policy.html">Политика конфиденциальности</a></li>
+            <li><a href="settings.html">Настройки</a></li>
+            <li><a href="tos.html">Условия пользования</a></li>
+            <li><a href="privacy_policy.html">Политика конфиденциальности</a></li>
             <li><button class="exit" type="button">Выйти</button></li>
           </ul>
         </div>
@@ -59,44 +59,37 @@
 
   <main>
     <div class="main__container">
-      <div class="map-section">
-        <figure class="map-section">
-          <div id="location-map"></div>
-          <figcaption>Leaflet © OpenStreetMap</figcaption>
-        </figure>
-      </div>
-
-      <button type="button" class="set-location">Укажите адрес</button>
-
-      <div class="selection-address-menu overlay">
-        <div class="input-forms">
-          <div class="input-container">
-            <label>
-              <i class="fa-solid fa-crosshairs"></i>
-              <input class="input-from" placeholder="Откуда едем?" type="search" name="from">
-            </label>
-          </div>
-          <div class="input-container">
-            <label>
-              <i class="fa-solid fa-flag"></i>
-              <input class="input-to" placeholder="Куда едем?" type="search" name="to">
-            </label>
-          </div>
-        </div>
-
-        <div class="addresses">
-          <!--
-          <article class="address" data-latitude="40.4" data-longitude="40.4" data-parent="from">
-            <button type="button" class="address__button text-box">
-              <b>Адрес</b>
-              <small>Адрес</small>
-            </button>
-          </article>
-          -->
-        </div>
-
-        <button type="submit" class="selection-address-menu__submit">Готово</button>
-      </div>
+      <figure class="map-section">
+        <div id="main-map"></div>
+        <figcaption>Leaflet © OpenStreetMap</figcaption>
+      </figure>
+      <form class="functions" name="FunctionsForm" action="" method="post">
+        <label class="checkbox-container">
+          <input type="checkbox" name="bicycle">
+          <div class="checkbox-radio"><div></div></div>
+          Перевозка велосипеда
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" name="animal">
+          <div class="checkbox-radio"><div></div></div>
+          Перевозка животных
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" name="winter_equipment">
+          <div class="checkbox-radio"><div></div></div>
+          Перевозка лыж или сноуборда
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" name="guide_dog">
+          <div class="checkbox-radio"><div></div></div>
+          С собакой-повадырем
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox" name="child_seat">
+          <div class="checkbox-radio"><div></div></div>
+          Детское кресло (Бустер)
+        </label>
+      </form>
     </div>
   </main>
 
@@ -105,19 +98,19 @@
       <nav class="navbar">
         <ul>
           <li>
-            <a href="../index.html" class="navbar__button_inactive">
+            <a href="index.html" class="navbar__button_inactive">
               <i class="fa-solid fa-house"></i>
             </a>
           </li>
 
           <li>
-            <a href="location.html" class="navbar__button_active">
+            <a href="location.html" class="navbar__button_inactive">
               <i class="fa-solid fa-location-dot"></i>
             </a>
           </li>
 
           <li>
-            <a href="functions.html" class="navbar__button_inactive">
+            <a href="#" class="navbar__button_active">
               <i class="fa-solid fa-list"></i>
             </a>
           </li>
@@ -139,10 +132,10 @@
   </footer>
 </div>
 
-<script src="../scripts/map_setup.js"></script>
-<script src="../scripts/theme_toggle.js"></script>
-<script src="../scripts/close_app.js"></script>
-<script src="../scripts/overlay.js"></script>
-<script src="../scripts/set_location.js"></script>
+<script src="scripts/map_setup.js"></script>
+<script src="scripts/theme_toggle.js"></script>
+<script src="scripts/close_app.js"></script>
+<script src="scripts/overlay.js"></script>
+<script src="scripts/functions_checker.js"></script>
 </body>
 </html>

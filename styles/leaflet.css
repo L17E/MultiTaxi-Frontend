@@ -1,7 +1,13 @@
-[id$="map"] {
+.map-section {
   height: 100%;
+  width: 100%;
   border-radius: 30px;
-  background-color: var(--background-color);
+}
+
+[id$="map"] {
+  height: inherit;
+  border-radius: 30px;
+  background-color: var(--white-color);
 }
 
 .leaflet-tile-pane {
@@ -15,7 +21,7 @@
   align-items: flex-end;
 }
 
-.leaflet-control {
+.leaflet-control-attribution {
   display: none;
 }
 

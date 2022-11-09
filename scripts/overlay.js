@@ -26,7 +26,7 @@ function toggleOverlay(overlay_name) {
   }
   overlay.classList.toggle('open');
 
-  if(overlay?.classList.contains('open')) {
+  if(overlay.classList.contains('open')) {
     showOverlay(overlay);
   } else {
     hideOverlay(overlay);
@@ -40,13 +40,12 @@ function addOverlay(button_name, overlay_name, outside_click) {
   if(button && overlay){
     button.addEventListener(
       'click',
-      (function(){ toggleOverlay(overlay_name) }),
+      (function(){ toggleOverlay(overlay) }),
       false
     );
 
     if(outside_click) {
       window.addEventListener('click', function (event) {
-        const overlay = document.querySelector(overlay_name);
         if (!overlay.contains(event.target) && !button.contains(event.target)
             && overlay.classList.contains("open")) {
           hideOverlay(overlay);
