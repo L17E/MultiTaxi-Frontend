@@ -1,9 +1,9 @@
-const LIGHT = 'light_theme';
-const DARK = 'dark_theme';
+const LIGHT = 'light';
+const DARK = 'dark';
 
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
-  document.documentElement.className = themeName;
+  document.documentElement.className = themeName + "_theme";
 }
 
 function toggleTheme() {

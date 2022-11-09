@@ -61,14 +61,27 @@
     <div class="main__container">
       <div class="map-section">
         <figure class="map-section">
-          <div id="location-map"></div>
+          <div id="location-map">
+            <div class="map-control">
+              <button type="button" class="map-zoom-in">
+                <i class="fa-solid fa-plus fa-2x"></i>
+              </button>
+              <button type="button" class="map-zoom-out">
+                <i class="fa-solid fa-minus fa-2x"></i>
+              </button>
+              <button type="button" class="map-current-location">
+                <i class="fa-solid fa-crosshairs fa-2x"></i>
+              </button>
+            </div>
+          </div>
+
           <figcaption>Leaflet © OpenStreetMap</figcaption>
         </figure>
       </div>
 
       <button type="button" class="set-location">Укажите адрес</button>
 
-      <form class="selection-address-menu overlay" name="LocationForm" action="" method="post">
+      <div class="selection-address-menu overlay">
         <div class="input-forms">
           <div class="input-container">
             <label>
@@ -96,7 +109,7 @@
         </div>
 
         <button type="submit" class="selection-address-menu__submit">Готово</button>
-      </form>
+      </div>
     </div>
   </main>
 

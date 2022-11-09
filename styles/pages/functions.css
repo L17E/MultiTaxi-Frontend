@@ -37,7 +37,7 @@
   padding: 5px;
 }
 
-.checkbox-radio div {
+.checkbox-radio span {
   background-color: var(--contrasting-color);
   width: 25px;
   height: 25px;
@@ -49,7 +49,7 @@
   justify-content: end;
 }
 
-.checkbox-container input:checked ~ .checkbox-radio div {
+.checkbox-container input:checked ~ .checkbox-radio span {
   background-color: var(--navigator-color);
 }
 
@@ -58,6 +58,6 @@
   justify-content: start;
 }
 
-.checkbox-container input:disabled ~ .checkbox-radio div {
+.checkbox-container input:disabled ~ .checkbox-radio span {
   background-color: var(--button-color);
 }

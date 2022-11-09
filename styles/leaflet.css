@@ -5,6 +5,10 @@
 }
 
 [id$="map"] {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  position: relative;
   height: inherit;
   border-radius: 30px;
   background-color: var(--white-color);
@@ -25,12 +29,35 @@
   display: none;
 }
 
-/*
-.leaflet-control a svg path {
-  display: none;
+.map-control {
+  position: absolute;
+  z-index: 99999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
-.leaflet-control span {
-  display: none;
+.map-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--button-color);
+  border-radius: 15px;
 }
-*/
+
+.map-control button i {
+  color: var(--sub-color);
+  font-weight: 700;
+}
+
+@media (max-height: 675px) {
+  .map-control {
+    flex-direction: row;
+  }
+}

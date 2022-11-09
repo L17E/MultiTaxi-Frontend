@@ -4,7 +4,10 @@ const winter_equipment = document.getElementsByName("winter_equipment")[0];
 const guide_dog = document.getElementsByName("guide_dog")[0];
 const child_seat = document.getElementsByName("child_seat")[0];
 
-function manageCheckboxes() {
+function onCheck(e) {
+  window.navigator.vibrate(20);
+  updateCheckboxes(e.target);
+
   if(child_seat.checked) {
     winter_equipment.disabled = true;
     bicycle.disabled = true;
@@ -17,8 +20,16 @@ function manageCheckboxes() {
   }
 }
 
-bicycle.addEventListener("click", manageCheckboxes);
-animal.addEventListener("click", manageCheckboxes);
-winter_equipment.addEventListener("click", manageCheckboxes);
-guide_dog.addEventListener("click", manageCheckboxes);
-child_seat.addEventListener("click", manageCheckboxes);
+function updateCheckboxes(checkbox) {
+  if(checkbox.checked) {
+    localStorage.setItem("checkbox_" + checkbox.name, "on")
+  } else if (!checkbox.checked) {
+    localStorage.removeItem("checkbox_" + checkbox.name)
+  }
+}
+
+bicycle.addEventListener("click", onCheck);
+animal.addEventListener("click", onCheck);
+winter_equipment.addEventListener("click", onCheck);
+guide_dog.addEventListener("click", onCheck);
+child_seat.addEventListener("click", onCheck);

@@ -60,16 +60,33 @@ function searchAddresses(event) {
 
   clearAddresses();
   for(let i = 0; i < 5; i++) {
-    createAddress(address, "Адрес " + i, "123", "123", event.target.name)
+    createAddress(address, "Адрес " + i, "47.7545", "35.62", event.target.name)
   }
   document.querySelector('.addresses').children.length = 0;
 }
 
+fnDelay = (function() { // source: https://habr.com/ru/post/228325/
+  let timer = 0;
+  return function(callback, ms){
+    clearTimeout(timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
 const from_input = document.querySelector(".input-from");
 const to_input = document.querySelector(".input-to");
 
-from_input.addEventListener("input", searchAddresses);
-to_input.addEventListener("input", searchAddresses);
+from_input.addEventListener("input", function(e) {
+  fnDelay(function() {
+    searchAddresses(e);
+  }, 300);
+});
+
+to_input.addEventListener("input", function(e) {
+  fnDelay(function() {
+    searchAddresses(e);
+  }, 300);
+});
 
 function setDefaultAddresses() {
   const from_address = localStorage.getItem("from_address");

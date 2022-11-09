@@ -60,33 +60,46 @@
   <main>
     <div class="main__container">
       <figure class="map-section">
-        <div id="main-map"></div>
+        <div id="functions-map">
+          <div class="map-control">
+            <button type="button" class="map-zoom-in">
+              <i class="fa-solid fa-plus fa-2x"></i>
+            </button>
+            <button type="button" class="map-zoom-out">
+              <i class="fa-solid fa-minus fa-2x"></i>
+            </button>
+            <button type="button" class="map-current-location">
+              <i class="fa-solid fa-crosshairs fa-2x"></i>
+            </button>
+          </div>
+        </div>
+
         <figcaption>Leaflet © OpenStreetMap</figcaption>
       </figure>
       <form class="functions" name="FunctionsForm" action="" method="post">
         <label class="checkbox-container">
           <input type="checkbox" name="bicycle">
-          <div class="checkbox-radio"><div></div></div>
+          <span class="checkbox-radio"><span></span></span>
           Перевозка велосипеда
         </label>
         <label class="checkbox-container">
           <input type="checkbox" name="animal">
-          <div class="checkbox-radio"><div></div></div>
+          <span class="checkbox-radio"><span></span></span>
           Перевозка животных
         </label>
         <label class="checkbox-container">
           <input type="checkbox" name="winter_equipment">
-          <div class="checkbox-radio"><div></div></div>
+          <span class="checkbox-radio"><span></span></span>
           Перевозка лыж или сноуборда
         </label>
         <label class="checkbox-container">
           <input type="checkbox" name="guide_dog">
-          <div class="checkbox-radio"><div></div></div>
+          <span class="checkbox-radio"><span></span></span>
           С собакой-повадырем
         </label>
         <label class="checkbox-container">
           <input type="checkbox" name="child_seat">
-          <div class="checkbox-radio"><div></div></div>
+          <span class="checkbox-radio"><span></span></span>
           Детское кресло (Бустер)
         </label>
       </form>

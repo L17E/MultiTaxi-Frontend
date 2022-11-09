@@ -60,7 +60,20 @@
   <main>
     <div class="main__container">
       <figure class="map-section">
-        <div id="main-map"></div>
+        <div id="main-map">
+          <div class="map-control">
+            <button type="button" class="map-zoom-in">
+              <i class="fa-solid fa-plus fa-2x"></i>
+            </button>
+            <button type="button" class="map-zoom-out">
+              <i class="fa-solid fa-minus fa-2x"></i>
+            </button>
+            <button type="button" class="map-current-location">
+              <i class="fa-solid fa-crosshairs fa-2x"></i>
+            </button>
+          </div>
+        </div>
+
         <figcaption>Leaflet © OpenStreetMap</figcaption>
       </figure>
       <a href="location.html" class="main__start text-box">
