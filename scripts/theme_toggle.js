@@ -19,7 +19,7 @@ theme_toggle.addEventListener('click', toggleTheme);
 
 function setDefaultTheme() {
   const theme = localStorage.getItem('theme') || DARK;
-  setTheme(theme)
+  setTheme(theme);
 }
 
-setDefaultTheme();
+(function(){ setDefaultTheme(); })();

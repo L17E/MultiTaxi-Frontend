@@ -5,7 +5,6 @@ const guide_dog = document.getElementsByName("guide_dog")[0];
 const child_seat = document.getElementsByName("child_seat")[0];
 
 function onCheck(e) {
-  window.navigator.vibrate(20);
   updateCheckboxes(e.target);
 
   if(child_seat.checked) {
