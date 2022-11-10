@@ -84,7 +84,7 @@ const map = setup();
 const latest_coordinates = getLatestCoordinates();
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
-    (position) => setView(map, [position.coords.latitude, position.coords.longitude]),
+    (position) => setView(map, latest_coordinates || [position.coords.latitude, position.coords.longitude]),
     () => setView(map, latest_coordinates || DEFAULT_COORDINATES),
   );
 } else {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -9,9 +10,183 @@
 
   <link rel="shortcut icon" href="content/favicon.ico">
   <title>MultiTaxi</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+          integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+          crossorigin="">
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="styles/style.css" rel="stylesheet">
 </head>
+
 <body>
-<h1>Страница в разработке</h1>
-<a href="index.html">Вернитесь назад</a>
+<div class="wrapper">
+  <header>
+    <div class="header__container">
+      <div class="weather">
+        <img class="weather__icon" src="" alt="Погода">
+        <div class="weather__box text-box">
+          <b class="weather__temperature text-box__title"></b>
+          <small class="weather__type text-box__body"></small>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="user">
+          <button class="theme_toggle" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-2x"></i>
+          </button>
+          <button class="avatar" type="button">
+            <img class="avatar__image" src="content/temp/avatar.png" alt="Пользователь">
+          </button>
+        </div>
+        <div class="selection-profile-menu overlay">
+          <ul>
+            <li><a href="settings.html">Настройки</a></li>
+            <li><a href="tos.html">Условия пользования</a></li>
+            <li><a href="privacy_policy.html">Политика конфиденциальности</a></li>
+            <li><button class="exit" type="button">Выйти</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main__container">
+      <scroll-container class="cars">
+        <scroll-page class="car" id="carEconomy">
+          <h2>Economy</h2>
+
+          <div class="car__body">
+            <img src="content/classes/economy.png" alt="Машина Эконом-Класс">
+            <div class="car__information">
+              <div class="car__price text-box">
+                <b>Цена:</b>
+                <small class="economy-price"></small>
+              </div>
+              <div class="car__time text-box">
+                <b>Приедет через:</b>
+                <small class="economy-time"></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="car__bottom">
+            <button type="button" class="car__select" id="economy-select">Выбрать</button>
+            <div class="car__navigation">
+              <a href="#carEconomy" class="car__nav_active"></a>
+              <a href="#carComfort" class="car__nav"></a>
+              <a href="#carBusiness" class="car__nav"></a>
+            </div>
+          </div>
+        </scroll-page>
+
+        <scroll-page class="car" id="carComfort">
+          <h2>Comfort</h2>
+
+          <div class="car__body">
+            <img src="content/classes/comfort.png" alt="Машина Комфорт-Класс">
+            <div class="car__information">
+              <div class="car__price text-box">
+                <b>Цена:</b>
+                <small class="comfort-price"></small>
+              </div>
+              <div class="car__time text-box">
+                <b>Приедет через:</b>
+                <small class="comfort-time"></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="car__bottom">
+            <button type="button" class="car__select" id="comfort-select">Выбрать</button>
+            <div class="car__navigation">
+              <a href="#carEconomy" class="car__nav"></a>
+              <a href="#carComfort" class="car__nav_active"></a>
+              <a href="#carBusiness" class="car__nav"></a>
+            </div>
+          </div>
+        </scroll-page>
+
+        <scroll-page class="car" id="carBusiness">
+          <h2>Comfort</h2>
+
+          <div class="car__body">
+            <img src="content/classes/business.png" alt="Машина Бизнес-Класс">
+            <div class="car__information">
+              <div class="car__price text-box">
+                <b>Цена:</b>
+                <small class="business-price"></small>
+              </div>
+              <div class="car__time text-box">
+                <b>Приедет через:</b>
+                <small class="business-time"></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="car__bottom">
+            <button type="button" class="car__select" id="business-select">Выбрать</button>
+            <div class="car__navigation">
+              <a href="#carEconomy" class="car__nav"></a>
+              <a href="#carComfort" class="car__nav"></a>
+              <a href="#carBusiness" class="car__nav_active"></a>
+            </div>
+          </div>
+        </scroll-page>
+      </scroll-container>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer__container">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="index.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="location.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-location-dot"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="functions.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-list"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar__button_active">
+              <i class="fa-solid fa-car"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="comment.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-comment"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script src="scripts/theme_toggle.js"></script>
+<script src="scripts/close_app.js"></script>
+<script src="scripts/overlay.js"></script>
+<script src="scripts/set_weather.js"></script>
+<script src="scripts/set_cars.js"></script>
 </body>
 </html>

@@ -11,19 +11,6 @@ main {
   width: 100%;
 }
 
-.map-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  height: 100%;
-}
-
-.map-section figcaption {
-  align-self: end;
-  font-size: 0.8rem;
-  color: var(--sub-color)
-}
-
 .text-box {
   display: flex;
   flex-direction: column;

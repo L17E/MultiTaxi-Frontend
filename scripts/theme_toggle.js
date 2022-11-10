@@ -22,4 +22,5 @@ function setDefaultTheme() {
   setTheme(theme);
 }
 
-(function(){ setDefaultTheme(); })();
+setDefaultTheme();
+setTimeout(setDefaultTheme, 5000); // Slow loading
