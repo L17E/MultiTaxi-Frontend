@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -9,9 +10,125 @@
 
   <link rel="shortcut icon" href="content/favicon.ico">
   <title>MultiTaxi</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+          integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+          crossorigin="">
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="styles/style.css" rel="stylesheet">
 </head>
+
 <body>
-<h1>Страница в разработке</h1>
-<a href="index.html">Вернитесь назад</a>
+<div class="wrapper">
+  <header>
+    <div class="header__container">
+      <div class="weather">
+        <img class="weather__icon" src="" alt="Погода">
+        <div class="weather__box text-box">
+          <b class="weather__temperature text-box__title"></b>
+          <small class="weather__type text-box__body"></small>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="user">
+          <button class="theme_toggle" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-2x"></i>
+          </button>
+          <button class="avatar" type="button">
+            <img class="avatar__image" src="content/temp/avatar.png" alt="Пользователь">
+          </button>
+        </div>
+        <div class="selection-profile-menu overlay">
+          <ul>
+            <li><a href="settings.html">Настройки</a></li>
+            <li><a href="tos.html">Условия пользования</a></li>
+            <li><a href="privacy_policy.html">Политика конфиденциальности</a></li>
+            <li><button class="exit" type="button">Выйти</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main__container">
+      <figure class="map-section">
+        <div id="comment-map">
+          <div class="map-control">
+            <button type="button" class="map-zoom-in">
+              <i class="fa-solid fa-plus fa-2x"></i>
+            </button>
+            <button type="button" class="map-zoom-out">
+              <i class="fa-solid fa-minus fa-2x"></i>
+            </button>
+            <button type="button" class="map-current-location">
+              <i class="fa-solid fa-crosshairs fa-2x"></i>
+            </button>
+          </div>
+        </div>
+
+        <figcaption>Leaflet © OpenStreetMap</figcaption>
+      </figure>
+
+      <div class="comment">
+        <textarea class="comment__form" required rows="8"
+                  placeholder="Есть пожелания? Напишите комментарий водителю"></textarea>
+        <button type="submit" class="comment__submit">Сохранить</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer__container">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="index.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="location.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-location-dot"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="functions.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-list"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="cars.html" class="navbar__button_inactive">
+              <i class="fa-solid fa-car"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar__button_active">
+              <i class="fa-solid fa-comment"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script src="scripts/map_setup.js"></script>
+<script src="scripts/theme_toggle.js"></script>
+<script src="scripts/close_app.js"></script>
+<script src="scripts/overlay.js"></script>
+<script src="scripts/set_weather.js"></script>
+<script src="scripts/save_comment.js"></script>
 </body>
 </html>

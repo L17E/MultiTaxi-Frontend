@@ -1,0 +1,21 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.comment__form {
+  background-color: var(--extra-button-color);
+  color: var(--inactive-color);
+  border-radius: 15px;
+  padding: 10px;
+  resize: none;
+}
+
+.comment__submit {
+  background-color: var(--button-color);
+  color: var(--contrasting-color);
+  border-radius: 30px;
+  padding: 10px;
+}

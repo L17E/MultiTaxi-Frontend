@@ -1,0 +1,18 @@
+.tos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tos__top {
+  color: var(--contrasting-color);
+}
+
+.tos__top ul li {
+  list-style: initial;
+  margin-left: 20px;
+}
+
+.tos__down {
+  color: var(--inactive-color);
+}
